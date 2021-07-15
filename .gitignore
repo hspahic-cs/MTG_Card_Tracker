@@ -1,0 +1,6 @@
+#Webpage Password
+cardTracker/pswd.env
+
+#Personal Data
+cardTracker/card_collection.csv
+cardTracker/db.sqlite3
