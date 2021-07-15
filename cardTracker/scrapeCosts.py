@@ -15,7 +15,7 @@ def updateCollection(filepath):
     with open(filepath, "r") as csvfile:
         csvreader = csv.reader(csvfile)
         fields = next(csvreader)
-        # Name, Quantity, Set, Cost
+        # Name, Quantity, Set, Cost, Img
         print(fields)
 
         for i, row in enumerate(csvreader):
@@ -32,10 +32,12 @@ def updateCollection(filepath):
             # Scrapes price
             soup = BeautifulSoup(page, "html.parser")
             price = soup.find('div',{'class': 'price-box-price'}).text
+            img = soup.find('img', {'class': 'price-card-image-image'})['src']
             price = price[2:]
 
             # Updates price & adds to collection holder
             row[3] = price
+            row[4] = img;
             cardCollection.append(row)
 
         csvfile.close()

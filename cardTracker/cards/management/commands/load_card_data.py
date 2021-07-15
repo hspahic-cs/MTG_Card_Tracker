@@ -28,4 +28,5 @@ class Command(BaseCommand):
             card.quantity = row['Quantity']
             card.cardSet = row['Set']
             card.cost = row['Cost']
+            card.img = row['Img']
             card.save()

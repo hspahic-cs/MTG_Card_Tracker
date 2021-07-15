@@ -1,1 +1,15 @@
-{%load static %}
+{% extends "base.html" %}
+{% block content %}
+<div class = "card labels">
+    <ul>
+        <li><Strong>Name</Strong>: {{sld_card.name}}</li>
+        <li><Strong>Set</Strong>: {{sld_card.cardSet}}</li>
+        <li><Strong>Cost</Strong>: {{sld_card.cost}}</li>
+        <li><Strong>Quantity</Strong>: {{sld_card.quantity}}</li>
+    </ul>
+    <figure>
+        <img src = "{{sld_card.img}}">
+        <figcaption>Image of {{sld_card.name}}</figcaption>
+    </figure>
+</div>
+{% endblock %}

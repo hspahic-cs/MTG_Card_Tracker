@@ -1,0 +1,28 @@
+<!--{%load static %}-->
+<html lang="en-US">
+
+<body class = "main-conent">
+    <nav id = menu>
+        <ul>
+            <li id = "home"><a href = "">Home</a></li>
+            <li id = "complete_list"><a href = "">Complete List</a></li>
+            <li id = "search_bar">
+            <input list="card_collection" id = "card_search">
+            <datalist id="card_collection">
+                {% for card in cards %}
+                <option value = "{{card.name}}"></option>
+                {% endfor %}    
+            </datalist>  
+            </li>
+        </ul>
+    </nav>
+    <div>
+        {% block content %}    
+        {% endblock %}
+        <input type="submit" id="card_selected">
+    </div>
+    <footer>
+        <p>Copyright @ <em>Tester 2021</em></p>
+    </footer>
+</body>
+</html>
